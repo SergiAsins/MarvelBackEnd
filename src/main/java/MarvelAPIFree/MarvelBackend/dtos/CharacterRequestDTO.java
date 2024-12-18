@@ -10,4 +10,6 @@ public record CharacterRequestDTO (
         String name,
 
         String description
+
+        //Long id; there is not in our example
 ){}
