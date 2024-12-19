@@ -22,7 +22,7 @@ public class CharacterService {
     }
 
     public CharacterResponseDTO createCharacter(CharacterRequestDTO characterRequestDTO) {
-        Optional<MarvelCharacter> existCharacter = characterRepository.findById(characterRequestDTO.id());
+            Optional<MarvelCharacter> existCharacter = characterRepository.findById(characterRequestDTO.id());
         if (existCharacter.isPresent())
             throw new CharacterExistingIdException("Character already exist with this ID");
 
@@ -48,7 +48,7 @@ public class CharacterService {
     }
 
     public List<CharacterResponseDTO> findByNameIgnoreCaseContaining(String name){
-        List<MarvelCharacter> characters = characterRepository.findByNameIgnoringCaseContaining(name);
+        List<MarvelCharacter> characters = characterRepository.findByNameIgnoreCaseContaining(name);
 
         if (characters.isEmpty()){
             throw new CharacterNotFoundException("The character with name " + name + " does not exist.");
