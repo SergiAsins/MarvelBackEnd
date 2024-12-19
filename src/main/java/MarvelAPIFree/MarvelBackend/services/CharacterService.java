@@ -22,10 +22,6 @@ public class CharacterService {
     }
 
     public CharacterResponseDTO createCharacter(CharacterRequestDTO characterRequestDTO) {
-            /*Optional<MarvelCharacter> existCharacter = characterRepository.findById(characterRequestDTO.id());
-        if (existCharacter.isPresent())
-            throw new CharacterExistingIdException("Character already exist with this ID");*/
-
         MarvelCharacter marvelCharacter = CharacterMapper.toEntity(characterRequestDTO);
         MarvelCharacter savedMarvelCharacter = characterRepository.save(marvelCharacter);
         return CharacterMapper.toResponseDTO(savedMarvelCharacter);

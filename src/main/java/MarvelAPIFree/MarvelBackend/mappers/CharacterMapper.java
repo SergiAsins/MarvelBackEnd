@@ -8,7 +8,7 @@ public class CharacterMapper {
     public static MarvelCharacter toEntity(CharacterRequestDTO characterRequestDTO){
         return new MarvelCharacter(
                 characterRequestDTO.name(),
-                characterRequestDTO.description()   );
+                characterRequestDTO.description());
     }
 
     public static CharacterResponseDTO toResponseDTO(MarvelCharacter marvelCharacter){
