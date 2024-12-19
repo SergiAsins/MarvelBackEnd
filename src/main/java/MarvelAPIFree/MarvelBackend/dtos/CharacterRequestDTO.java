@@ -11,5 +11,5 @@ public record CharacterRequestDTO (
 
         String description
 
-        //there is not in our example
+        //Long id; there is not in our example
 ){}
