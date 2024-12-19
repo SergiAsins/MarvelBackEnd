@@ -53,7 +53,7 @@ public class CharacterService {
                 .map(CharacterMapper::toResponseDTO).toList();
     }
 
-    public CharacterResponseDTO updateGuardianById(Long id, CharacterRequestDTO characterRequestDTO) {
+    public CharacterResponseDTO updateCharacterById(Long id, CharacterRequestDTO characterRequestDTO) {
         Optional<MarvelCharacter> optionalCharacter = characterRepository.findById(id);
 
         if(optionalCharacter.isPresent()) {

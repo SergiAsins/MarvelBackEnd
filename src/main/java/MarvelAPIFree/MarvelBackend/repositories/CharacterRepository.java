@@ -11,4 +11,6 @@ public interface CharacterRepository extends JpaRepository<MarvelCharacter, Long
     Optional<MarvelCharacter> findById(Long id);
 
     List<MarvelCharacter> findByNameIgnoreCaseContaining(String name);
+
+
 }

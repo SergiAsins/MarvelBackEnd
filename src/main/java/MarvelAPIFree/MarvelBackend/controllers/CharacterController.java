@@ -2,6 +2,7 @@ package MarvelAPIFree.MarvelBackend.controllers;
 
 import MarvelAPIFree.MarvelBackend.dtos.CharacterRequestDTO;
 import MarvelAPIFree.MarvelBackend.dtos.CharacterResponseDTO;
+import MarvelAPIFree.MarvelBackend.models.MarvelCharacter;
 import MarvelAPIFree.MarvelBackend.services.CharacterService;
 import jakarta.validation.Valid;
 import jakarta.websocket.server.PathParam;
@@ -27,13 +28,13 @@ public class CharacterController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CharacterResponseDTO> getGuardianById(@PathVariable Long id) {
-        CharacterResponseDTO guardianResponseDTO = characterService.findById(id);
-        return new ResponseEntity<>(guardianResponseDTO, HttpStatus.OK);
+    public ResponseEntity<CharacterResponseDTO> getCharacterById(@PathVariable Long id) {
+        CharacterResponseDTO characterResponseDTO = characterService.findById(id);
+        return new ResponseEntity<>(characterResponseDTO, HttpStatus.OK);
     }
 
     @GetMapping
-    public List<CharacterResponseDTO> getGuardianByName(@PathParam("name") String name) {
+    public List<CharacterResponseDTO> getCharacterByName(@PathParam("name") String name) {
         if (name == null) {
             return characterService.findAll();
         }
@@ -41,13 +42,13 @@ public class CharacterController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CharacterResponseDTO> updateGuardian(@PathVariable Long id, @RequestBody @Valid CharacterRequestDTO characterRequestDTO) {
-        CharacterResponseDTO guardianResponseDTO = characterService.updateGuardianById(id, characterRequestDTO);
-        return new ResponseEntity<>(guardianResponseDTO, HttpStatus.OK);
+    public ResponseEntity<CharacterResponseDTO> updateCharacter(@PathVariable Long id, @RequestBody @Valid CharacterRequestDTO characterRequestDTO) {
+        CharacterResponseDTO characterResponseDTO = characterService.updateCharacterById(id, characterRequestDTO);
+        return new ResponseEntity<>(characterResponseDTO, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteGuardian(@PathVariable Long id) {
+    public ResponseEntity<String> deleteCharacter(@PathVariable Long id) {
         characterService.deleteCharacterById(id);
         return new ResponseEntity<>("The character has been eliminated", HttpStatus.OK);
     }

@@ -12,6 +12,7 @@ public class MarvelCharacter {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+
     private String name;
     private String description;
 
@@ -41,7 +42,6 @@ public class MarvelCharacter {
                 ", description ='" + description + '\'' +
                 '}';
     }
-
 
     // Default constructor
     public MarvelCharacter() {
