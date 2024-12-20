@@ -16,9 +16,14 @@ MarvelBackend/
 │   │   │           ├── controllers/
 │   │   │           │   └── CharacterController.java
 │   │   │           ├── models/
-│   │   │           │   └── Character.java
+│   │   │           │   └── MarvelCharacter.java
 │   │   │           └── services/
 │   │   │               └── CharacterService.java
+│   │   │           └── respositories/
+│   │   │               └── CharacterRepository.java
+│   │   │           └── dtos/
+│   │   │               └── CharacterRequestDTP.jaba
+│   │   │               └── CharacterResponseDTP.java
 │   │   └── resources/
 │   │       └── application.properties
 │   └── test/
